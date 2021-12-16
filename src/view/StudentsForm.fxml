@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="540.0" prefWidth="985.0" style="-fx-background-color: E9EEF9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentsFormController">
+   <children>
+      <Text fill="#011be1" layoutX="14.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Students">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Pane layoutX="43.0" layoutY="74.0" prefHeight="409.0" prefWidth="373.0" style="-fx-background-color: white;" styleClass="pane-sub" stylesheets="@style/styles.css">
+         <children>
+            <JFXTextField labelFloat="true" layoutX="30.0" layoutY="52.0" prefHeight="26.0" prefWidth="190.0" promptText="Student ID">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton layoutX="240.0" layoutY="53.0" style="-fx-background-color: #D1D0CE;" text="SEARCH">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXTextField labelFloat="true" layoutX="30.0" layoutY="114.0" prefHeight="26.0" prefWidth="289.0" promptText="Student Name">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField labelFloat="true" layoutX="31.0" layoutY="298.0" prefHeight="26.0" prefWidth="289.0" promptText="Address">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField labelFloat="true" layoutX="30.0" layoutY="235.0" prefHeight="26.0" prefWidth="289.0" promptText="Mobile">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField labelFloat="true" layoutX="30.0" layoutY="175.0" prefHeight="26.0" prefWidth="289.0" promptText="NIC">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton layoutX="255.0" layoutY="356.0" style="-fx-background-color: #6CBB3C;" text="UPDATE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="175.0" layoutY="356.0" style="-fx-background-color: #F75D59;" text="DELETE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane layoutX="461.0" layoutY="74.0" prefHeight="409.0" prefWidth="481.0" style="-fx-background-color: white;" styleClass="pane-sub" stylesheets="@style/styles.css">
+         <children>
+            <TableView layoutX="23.0" layoutY="47.0" prefHeight="330.0" prefWidth="436.0">
+              <columns>
+                <TableColumn prefWidth="155.0" text="St ID" />
+                <TableColumn prefWidth="280.0" text="Student Name" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

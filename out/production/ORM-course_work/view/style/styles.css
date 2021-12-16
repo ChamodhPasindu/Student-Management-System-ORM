@@ -1,0 +1,12 @@
+.pane-log{
+    -fx-background-radius: 40px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+}
+.pane-sub{
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 2, 0, 0, 0);
+    -fx-background-radius: 12px;
+}
+.btn{
+    -fx-border-width: 2px;
+    -fx-border-color: #c94141;
+}

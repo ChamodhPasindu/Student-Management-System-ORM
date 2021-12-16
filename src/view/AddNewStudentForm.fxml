@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="520.0" prefWidth="425.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddNewStudentFormController">
+   <children>
+      <Text fill="#011be1" layoutX="112.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add New Student">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Pane layoutX="38.0" layoutY="66.0" prefHeight="423.0" prefWidth="344.0" style="-fx-background-color: white;" styleClass="pane-sub" stylesheets="@style/styles.css">
+         <children>
+            <JFXTextField labelFloat="true" layoutX="27.0" layoutY="49.0" prefHeight="33.0" prefWidth="289.0" promptText="Student ID">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField labelFloat="true" layoutX="27.0" layoutY="111.0" prefHeight="26.0" prefWidth="289.0" promptText="Student Name">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField labelFloat="true" layoutX="28.0" layoutY="295.0" prefHeight="26.0" prefWidth="289.0" promptText="Address">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField labelFloat="true" layoutX="27.0" layoutY="232.0" prefHeight="26.0" prefWidth="289.0" promptText="Mobile">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField labelFloat="true" layoutX="27.0" layoutY="172.0" prefHeight="26.0" prefWidth="289.0" promptText="NIC">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton layoutX="121.0" layoutY="355.0" prefHeight="33.0" prefWidth="127.0" style="-fx-background-color: #6CBB3C;" text="CONFIRM" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="loginContext" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+   <children>
+      <ImageView fitHeight="413.0" fitWidth="598.0" layoutX="129.0" layoutY="126.0" pickOnBounds="true">
+         <image>
+            <Image url="@assets/school-software.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="786.0" layoutY="115.0" prefHeight="400.0" prefWidth="348.0" style="-fx-background-color: white;" styleClass="pane-log" stylesheets="@style/styles.css">
+         <children>
+            <Text layoutX="48.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login to your account">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            <JFXTextField fx:id="txtName" labelFloat="true" layoutX="50.0" layoutY="107.0" prefHeight="33.0" prefWidth="246.0" promptText="User Name">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtPassword" layoutX="50.0" layoutY="181.0" prefHeight="39.0" prefWidth="246.0" promptText="Password">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton buttonType="RAISED" layoutX="51.0" layoutY="316.0" onAction="#loginBtnOnAction" prefHeight="39.0" prefWidth="246.0" ripplerFill="#d70a29" style="-fx-background-color: red;" text="LOGIN" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Text fill="#3313d3" fontSmoothingType="LCD" layoutX="449.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Back!">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
