@@ -9,7 +9,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="540.0" prefWidth="985.0" style="-fx-background-color: E9EEF9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProgramsFormController">
    <children>
       <Text fill="#011be1" layoutX="14.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Programs">
@@ -19,7 +18,7 @@
       </Text>
       <Pane layoutX="43.0" layoutY="74.0" prefHeight="409.0" prefWidth="373.0" style="-fx-background-color: white;" styleClass="pane-sub" stylesheets="@style/styles.css">
          <children>
-            <JFXTextField labelFloat="true" layoutX="30.0" layoutY="52.0" prefHeight="26.0" prefWidth="190.0" promptText="programe ID">
+            <JFXTextField labelFloat="true" layoutX="30.0" layoutY="52.0" prefHeight="26.0" prefWidth="190.0" promptText="program ID">
                <font>
                   <Font size="17.0" />
                </font>
@@ -29,7 +28,7 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </JFXButton>
-            <JFXTextField labelFloat="true" layoutX="30.0" layoutY="126.0" prefHeight="26.0" prefWidth="289.0" promptText="Programe Name">
+            <JFXTextField labelFloat="true" layoutX="30.0" layoutY="126.0" prefHeight="26.0" prefWidth="289.0" promptText="Program Name">
                <font>
                   <Font size="17.0" />
                </font>
@@ -60,8 +59,8 @@
          <children>
             <TableView layoutX="23.0" layoutY="47.0" prefHeight="330.0" prefWidth="436.0">
                <columns>
-                  <TableColumn prefWidth="155.0" text="Programe ID" />
-                  <TableColumn prefWidth="280.0" text="Programe Name" />
+                  <TableColumn prefWidth="155.0" text="Program ID" />
+                  <TableColumn prefWidth="280.0" text="Program Name" />
                </columns>
             </TableView>
          </children>
