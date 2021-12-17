@@ -4,6 +4,7 @@ import bo.custom.StudentBO;
 import dao.DAOFactory;
 import dao.custom.StudentDAO;
 import dao.custom.impl.StudentDAOImpl;
+import dto.ProgramDTO;
 import dto.StudentDTO;
 import entity.Student;
 
@@ -19,5 +20,26 @@ public class StudentBOImpl implements StudentBO {
     @Override
     public boolean addStudent(StudentDTO dto) throws SQLException, ClassNotFoundException {
         return studentDAO.add(new Student(dto.getStId(),dto.getName(),dto.getNic(),dto.getMobile(),dto.getAddress()));
+    }
+
+    @Override
+    public StudentDTO searchStudent(String id) throws SQLException, ClassNotFoundException {
+        Student student = studentDAO.search(id);
+        if (student!=null){
+            return new StudentDTO(student.getStudentId(),student.getStudentName(),student.getAddress(),student.getNic(),
+                    student.getMobile());
+        }else {
+            return null;
+        }
+    }
+
+    @Override
+    public boolean updateStudent(StudentDTO dto) throws SQLException, ClassNotFoundException {
+        return studentDAO.update(new Student(dto.getStId(), dto.getName(), dto.getNic(), dto.getMobile(), dto.getAddress()));
+    }
+
+    @Override
+    public boolean deleteStudent(String id) throws SQLException, ClassNotFoundException {
+        return studentDAO.delete(id);
     }
 }

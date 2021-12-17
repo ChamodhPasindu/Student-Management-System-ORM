@@ -29,28 +29,32 @@ public class ProgramsFormController {
 
     public void updateOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         ProgramDTO programDTO = new ProgramDTO(
-                txtProgramId.getText(),txtProgramName.getText(),txtDuration.getText(),new BigDecimal(txtFee.getText())
+                txtProgramId.getText(), txtProgramName.getText(), txtDuration.getText(), new BigDecimal(txtFee.getText())
         );
-        if (programBO.updateProgram(programDTO)){
-            new Alert(Alert.AlertType.INFORMATION,"Updated Program Successfully").show();
-        }else{
-            new Alert(Alert.AlertType.WARNING,"Error,Try Again Latter").show();
+        if (programBO.updateProgram(programDTO)) {
+            new Alert(Alert.AlertType.INFORMATION, "Updated Program Successfully").show();
+        } else {
+            new Alert(Alert.AlertType.WARNING, "Error,Try Again Latter").show();
         }
     }
 
     public void deleteOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         if (programBO.deleteProgram(txtProgramId.getText())) {
-            new Alert(Alert.AlertType.INFORMATION,"Deleted Program Successfully").show();
-        }else{
-            new Alert(Alert.AlertType.WARNING,"Error,Try Again Latter").show();
+            new Alert(Alert.AlertType.INFORMATION, "Deleted Program Successfully").show();
+        } else {
+            new Alert(Alert.AlertType.WARNING, "Error,Try Again Latter").show();
         }
     }
 
     public void searchOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         ProgramDTO programDTO = programBO.searchProgram(txtProgramId.getText());
-        txtProgramName.setText(programDTO.getName());
-        txtDuration.setText(programDTO.getDuration());
-        txtFee.setText(programDTO.getFee().toString());
+        if (programDTO == null) {
+            new Alert(Alert.AlertType.WARNING, "Empty Result set").show();
+        } else {
+            txtProgramName.setText(programDTO.getName());
+            txtDuration.setText(programDTO.getDuration());
+            txtFee.setText(programDTO.getFee().toString());
+        }
     }
 
     public void addNewProgramOnAction(ActionEvent actionEvent) throws IOException {
