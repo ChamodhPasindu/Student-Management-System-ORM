@@ -19,13 +19,12 @@ public class Student {
     @OneToMany(mappedBy = "student",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<ProgramDetail>programDetails = new ArrayList<>();
 
-    public Student(String studentId, String studentName, String nic, String mobile, String address, List<ProgramDetail> programDetails) {
+    public Student(String studentId, String studentName, String nic, String mobile, String address) {
         this.studentId = studentId;
         this.studentName = studentName;
         this.nic = nic;
         this.mobile = mobile;
         this.address = address;
-        this.programDetails = programDetails;
     }
 
     public Student() {

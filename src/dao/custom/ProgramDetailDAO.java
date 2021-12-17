@@ -1,4 +1,6 @@
 package dao.custom;
 
-public interface ProgramDetailDAO {
+import dao.CrudDAO;
+
+public interface ProgramDetailDAO extends CrudDAO<ProgramDetailDAO,String> {
 }
