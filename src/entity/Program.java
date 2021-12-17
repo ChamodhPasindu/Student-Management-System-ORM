@@ -17,19 +17,20 @@ public class Program {
     private String duration;
     private BigDecimal fee;
 
-    @ManyToMany(mappedBy = "programs", cascade = CascadeType.ALL)
-    private List<Student> students = new ArrayList<>();
+    @OneToMany(mappedBy = "program", cascade = CascadeType.ALL , fetch = FetchType.EAGER)
+    private List<ProgramDetail>programDetails  = new ArrayList<>();
 
-    public Program(String id, String name, String duration, BigDecimal fee, List<Student> students) {
+
+    public Program() {
+
+    }
+
+    public Program(String id, String name, String duration, BigDecimal fee, List<ProgramDetail> programDetails) {
         this.id = id;
         this.name = name;
         this.duration = duration;
         this.fee = fee;
-        this.students = students;
-    }
-
-    public Program() {
-
+        this.programDetails = programDetails;
     }
 
     public String getId() {
@@ -64,12 +65,12 @@ public class Program {
         this.fee = fee;
     }
 
-    public List<Student> getStudents() {
-        return students;
+    public List<ProgramDetail> getProgramDetails() {
+        return programDetails;
     }
 
-    public void setStudents(List<Student> students) {
-        this.students = students;
+    public void setProgramDetails(List<ProgramDetail> programDetails) {
+        this.programDetails = programDetails;
     }
 
     @Override
@@ -79,7 +80,7 @@ public class Program {
                 ", name='" + name + '\'' +
                 ", duration='" + duration + '\'' +
                 ", fee=" + fee +
-                ", students=" + students +
+                ", programDetails=" + programDetails +
                 '}';
     }
 }

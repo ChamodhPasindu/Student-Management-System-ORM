@@ -1,4 +1,6 @@
 package bo.custom.impl;
 
-public class StudentBOImpl {
+import bo.custom.StudentBO;
+
+public class StudentBOImpl implements StudentBO {
 }

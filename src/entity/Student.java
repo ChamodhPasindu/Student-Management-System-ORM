@@ -1,9 +1,6 @@
 package entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,20 +16,19 @@ public class Student {
     private String mobile;
     private String address;
 
-    @ManyToMany
-    private List<Program> programs = new ArrayList<>();
+    @OneToMany(mappedBy = "student",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<ProgramDetail>programDetails = new ArrayList<>();
 
-    public Student(String studentId, String studentName, String nic, String mobile, String address, List<Program> programs) {
+    public Student(String studentId, String studentName, String nic, String mobile, String address, List<ProgramDetail> programDetails) {
         this.studentId = studentId;
         this.studentName = studentName;
         this.nic = nic;
         this.mobile = mobile;
         this.address = address;
-        this.programs = programs;
+        this.programDetails = programDetails;
     }
 
     public Student() {
-
     }
 
     public String getStudentId() {
@@ -75,12 +71,12 @@ public class Student {
         this.address = address;
     }
 
-    public List<Program> getPrograms() {
-        return programs;
+    public List<ProgramDetail> getProgramDetails() {
+        return programDetails;
     }
 
-    public void setPrograms(List<Program> programs) {
-        this.programs = programs;
+    public void setProgramDetails(List<ProgramDetail> programDetails) {
+        this.programDetails = programDetails;
     }
 
     @Override
@@ -91,7 +87,7 @@ public class Student {
                 ", nic='" + nic + '\'' +
                 ", mobile='" + mobile + '\'' +
                 ", address='" + address + '\'' +
-                ", programs=" + programs +
+                ", programDetails=" + programDetails +
                 '}';
     }
 }

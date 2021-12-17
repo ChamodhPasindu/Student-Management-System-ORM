@@ -1,6 +1,7 @@
 package util;
 
 import entity.Program;
+import entity.ProgramDetail;
 import entity.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -23,7 +24,8 @@ public class FactoryConfiguration {
         properties.put("hibernate.hbm2ddl.auto","update");
         Configuration configuration = new Configuration().setProperties(properties)
                 .addAnnotatedClass(Student.class)
-                .addAnnotatedClass(Program.class);
+                .addAnnotatedClass(Program.class)
+                .addAnnotatedClass(ProgramDetail.class);
         sessionFactory = configuration.buildSessionFactory();
     }
 

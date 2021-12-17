@@ -1,4 +1,6 @@
 package bo.custom;
 
-public interface ProgramBO {
+import bo.SuperBO;
+
+public interface ProgramBO extends SuperBO {
 }
