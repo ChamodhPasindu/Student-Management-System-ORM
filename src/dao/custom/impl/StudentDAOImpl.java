@@ -19,7 +19,6 @@ public class StudentDAOImpl implements StudentDAO {
         Transaction transaction = session.beginTransaction();
 
         Serializable save = session.save(student);
-        System.out.println(save);
         transaction.commit();
         session.close();
         return true;
@@ -62,14 +61,14 @@ public class StudentDAOImpl implements StudentDAO {
             int tempId = Integer.parseInt(list.get(0).split("-")[1]);
             tempId = tempId + 1;
             if (tempId <= 9) {
-                return "C-00" + tempId;
+                return "ST-00" + tempId;
             } else if (tempId <= 99) {
-                return "C-0" + tempId;
+                return "ST-0" + tempId;
             } else {
-                return "C-" + tempId;
+                return "ST-" + tempId;
             }
         } else {
-            return "C-001";
+            return "ST-001";
         }
     }
 

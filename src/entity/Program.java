@@ -25,12 +25,11 @@ public class Program {
 
     }
 
-    public Program(String id, String name, String duration, BigDecimal fee, List<ProgramDetail> programDetails) {
+    public Program(String id, String name, String duration, BigDecimal fee) {
         this.id = id;
         this.name = name;
         this.duration = duration;
         this.fee = fee;
-        this.programDetails = programDetails;
     }
 
     public String getId() {

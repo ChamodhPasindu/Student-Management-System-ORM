@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="520.0" prefWidth="425.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddNewProgramFormController">
+   <children>
+      <Pane layoutX="32.0" layoutY="60.0" prefHeight="423.0" prefWidth="344.0" style="-fx-background-color: white;" styleClass="pane-sub" stylesheets="@style/styles.css">
+         <children>
+            <JFXTextField fx:id="txtProgramId" labelFloat="true" layoutX="27.0" layoutY="52.0" prefHeight="33.0" prefWidth="289.0" promptText="Program ID">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtProgramName" labelFloat="true" layoutX="27.0" layoutY="122.0" prefHeight="26.0" prefWidth="289.0" promptText="Program Name">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtFee" labelFloat="true" layoutX="27.0" layoutY="263.0" prefHeight="26.0" prefWidth="289.0" promptText="Fee(LKR)">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtDuration" labelFloat="true" layoutX="27.0" layoutY="192.0" prefHeight="26.0" prefWidth="289.0" promptText="Duration">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="confirmOnAction" layoutX="108.0" layoutY="359.0" onAction="#confirmOnAction" prefHeight="33.0" prefWidth="127.0" style="-fx-background-color: #6CBB3C;" text="CONFIRM" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Text fill="#011be1" layoutX="114.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add New Program">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

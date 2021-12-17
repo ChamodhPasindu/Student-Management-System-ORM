@@ -37,7 +37,7 @@ public class AddNewStudentFormController {
                 txtMobile.getText()
         );
         if (studentBO.addStudent(studentDTO)){
-            new Alert(Alert.AlertType.CONFIRMATION,"Student Added Successfully").show();
+            new Alert(Alert.AlertType.INFORMATION,"Student Added Successfully").show();
             clearAllOnAction();
         }else{
             new Alert(Alert.AlertType.WARNING,"Error,Try Again Latter").show();
