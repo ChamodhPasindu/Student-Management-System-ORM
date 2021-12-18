@@ -5,6 +5,7 @@ import dto.ProgramDTO;
 import entity.Program;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public interface ProgramBO extends SuperBO {
     public String createItemId() throws SQLException, ClassNotFoundException;
@@ -16,5 +17,7 @@ public interface ProgramBO extends SuperBO {
     boolean updateProgram(ProgramDTO dto) throws SQLException, ClassNotFoundException;
 
     boolean deleteProgram(String id) throws SQLException, ClassNotFoundException;
+
+    ArrayList<ProgramDTO> getAllProgramDetail() throws SQLException, ClassNotFoundException;
 
 }

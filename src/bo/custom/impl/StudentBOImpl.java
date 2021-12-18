@@ -6,9 +6,11 @@ import dao.custom.StudentDAO;
 import dao.custom.impl.StudentDAOImpl;
 import dto.ProgramDTO;
 import dto.StudentDTO;
+import entity.Program;
 import entity.Student;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class StudentBOImpl implements StudentBO {
     StudentDAO studentDAO = (StudentDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.STUDENT);
@@ -41,5 +43,16 @@ public class StudentBOImpl implements StudentBO {
     @Override
     public boolean deleteStudent(String id) throws SQLException, ClassNotFoundException {
         return studentDAO.delete(id);
+    }
+
+    @Override
+    public ArrayList<StudentDTO> getAllStudentDetail() throws SQLException, ClassNotFoundException {
+        ArrayList<Student> details = studentDAO.getAll();
+        ArrayList<StudentDTO> dtos = new ArrayList<>();
+
+        for (Student student:details) {
+            dtos.add(new StudentDTO(student.getStudentId(),student.getStudentName(),student.getAddress(),student.getNic(),student.getMobile()));
+        }
+        return dtos;
     }
 }
