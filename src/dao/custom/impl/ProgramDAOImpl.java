@@ -103,7 +103,21 @@ public class ProgramDAOImpl implements ProgramDAO {
 
     @Override
     public ArrayList<String> getProgramIds() throws SQLException, ClassNotFoundException {
-        return null;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        String hql = "SELECT DISTINCT id FROM program ";
+        Query query = session.createQuery(hql);
+        List<String> list = query.list();
+
+        transaction.commit();
+        session.close();
+
+        ArrayList<String> programId = new ArrayList<>();
+        programId.addAll(list);
+
+
+        return programId;
     }
 
     @Override

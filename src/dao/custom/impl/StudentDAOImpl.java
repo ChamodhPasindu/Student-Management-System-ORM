@@ -103,6 +103,21 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public ArrayList<String> getStudentIds() throws SQLException, ClassNotFoundException {
-        return null;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        String hql = "SELECT DISTINCT studentId FROM student ";
+        Query query = session.createQuery(hql);
+        List<Student> list = query.list();
+
+        transaction.commit();
+        session.close();
+
+        ArrayList<String> studentId = new ArrayList<>();
+        for (Student s: list) {
+            studentId.add(s.getStudentId());
+        }
+
+        return studentId;
     }
 }

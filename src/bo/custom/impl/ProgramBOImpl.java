@@ -53,4 +53,9 @@ public class ProgramBOImpl implements ProgramBO {
         }
         return dtos;
     }
+
+    @Override
+    public ArrayList<String> getProgramId() throws SQLException, ClassNotFoundException {
+        return programDAO.getProgramIds();
+    }
 }

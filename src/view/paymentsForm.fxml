@@ -25,44 +25,45 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </JFXButton>
-            <ComboBox layoutX="28.0" layoutY="92.0" prefHeight="26.0" prefWidth="160.0" promptText="Student ID" />
-            <ComboBox layoutX="28.0" layoutY="147.0" prefHeight="26.0" prefWidth="160.0" promptText="Program ID" />
-            <JFXTextField labelFloat="true" layoutX="221.0" layoutY="92.0" prefHeight="26.0" prefWidth="183.0" promptText="Student Name" />
-            <JFXTextField labelFloat="true" layoutX="438.0" layoutY="92.0" prefHeight="26.0" prefWidth="48.0" promptText="Age" />
-            <JFXTextField labelFloat="true" layoutX="511.0" layoutY="92.0" prefHeight="26.0" prefWidth="241.0" promptText="Address" />
-            <JFXTextField labelFloat="true" layoutX="221.0" layoutY="147.0" promptText="Program Name" />
-            <JFXTextField labelFloat="true" layoutX="597.0" layoutY="147.0" promptText="Fee" />
-            <JFXTextField labelFloat="true" layoutX="409.0" layoutY="147.0" promptText="Duration" />
+            <ComboBox fx:id="cmbProgramId" layoutX="28.0" layoutY="147.0" prefHeight="26.0" prefWidth="160.0" promptText="Program ID" />
+            <JFXTextField fx:id="txtStudentName" labelFloat="true" layoutX="294.0" layoutY="92.0" prefHeight="26.0" prefWidth="154.0" promptText="Student Name" />
+            <JFXTextField fx:id="txtMobile" labelFloat="true" layoutX="462.0" layoutY="92.0" prefHeight="26.0" prefWidth="111.0" promptText="Mobile" />
+            <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="584.0" layoutY="92.0" prefHeight="26.0" prefWidth="241.0" promptText="Address" />
+            <JFXTextField fx:id="txtProgramName" labelFloat="true" layoutX="294.0" layoutY="147.0" promptText="Program Name" />
+            <JFXTextField fx:id="txtFee" labelFloat="true" layoutX="670.0" layoutY="147.0" promptText="Fee" />
+            <JFXTextField fx:id="txtDuration" labelFloat="true" layoutX="482.0" layoutY="147.0" promptText="Duration" />
             <Text layoutX="688.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" wrappingWidth="56.9169921875">
                <font>
                   <Font name="System Bold Italic" size="15.0" />
                </font>
             </Text>
-            <Label layoutX="747.0" layoutY="20.0" prefHeight="16.0" prefWidth="125.0" text="Label">
+            <Label fx:id="lblDate" layoutX="747.0" layoutY="20.0" prefHeight="16.0" prefWidth="125.0" text="Label">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXButton layoutX="701.0" layoutY="194.0" prefHeight="23.0" prefWidth="75.0" style="-fx-background-color: #F4A460;" text="ADD" textFill="WHITE">
+            <JFXButton layoutX="749.0" layoutY="194.0" onAction="#addOnAction" prefHeight="23.0" prefWidth="75.0" style="-fx-background-color: #F4A460;" text="ADD" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="621.0" layoutY="194.0" prefHeight="23.0" prefWidth="67.0" style="-fx-background-color: #F75D59;" text="CLEAR" textFill="WHITE">
+            <JFXButton layoutX="669.0" layoutY="194.0" onAction="#clearOnAction" prefHeight="23.0" prefWidth="67.0" style="-fx-background-color: #F75D59;" text="CLEAR" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </JFXButton>
+            <JFXButton layoutX="201.0" layoutY="92.0" onAction="#searchOnAction" style="-fx-background-color: #A9A9A9;" text="SEARCH" textFill="WHITE" />
+            <JFXTextField fx:id="txtStId" labelFloat="true" layoutX="31.0" layoutY="92.0" promptText="Student ID" />
          </children>
       </Pane>
       <Pane layoutX="30.0" layoutY="313.0" prefHeight="200.0" prefWidth="897.0" style="-fx-background-color: white;" styleClass="pane-sub" stylesheets="@style/styles.css">
          <children>
-            <TableView layoutX="29.0" layoutY="14.0" prefHeight="160.0" prefWidth="837.0">
+            <TableView fx:id="tblPrograms" layoutX="29.0" layoutY="14.0" prefHeight="160.0" prefWidth="837.0">
               <columns>
-                <TableColumn prefWidth="173.0" text="Program ID" />
-                <TableColumn prefWidth="254.0" text="Program" />
-                  <TableColumn prefWidth="241.0" text="Duration" />
-                  <TableColumn prefWidth="168.0" text="Fee(LKR)" />
+                <TableColumn fx:id="colProgramId" prefWidth="173.0" text="Program ID" />
+                <TableColumn fx:id="colProgram" prefWidth="254.0" text="Program" />
+                  <TableColumn fx:id="colDuration" prefWidth="241.0" text="Duration" />
+                  <TableColumn fx:id="colFee" prefWidth="168.0" text="Fee(LKR)" />
               </columns>
             </TableView>
          </children>

@@ -20,4 +20,6 @@ public interface ProgramBO extends SuperBO {
 
     ArrayList<ProgramDTO> getAllProgramDetail() throws SQLException, ClassNotFoundException;
 
+    ArrayList<String> getProgramId() throws SQLException, ClassNotFoundException;
+
 }

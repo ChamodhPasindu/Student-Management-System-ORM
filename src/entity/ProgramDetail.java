@@ -18,6 +18,12 @@ public class ProgramDetail {
     private Program program;
     private LocalDate date;
 
+    public ProgramDetail(Student student, Program program, LocalDate date) {
+        this.student = student;
+        this.program = program;
+        this.date = date;
+    }
+
     public ProgramDetail(int id, Student student, Program program, LocalDate date) {
         this.id = id;
         this.student = student;
