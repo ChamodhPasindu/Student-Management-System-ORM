@@ -1,27 +1,38 @@
-package view.tm;
+package dto;
 
 import java.time.LocalDate;
 
-public class StudentTM {
+public class CustomDTO {
     private String stId;
-    private String stName;
+    private String name;
     private String address;
     private String nic;
     private String mobile;
     private LocalDate date;
 
-    public StudentTM(String stId, String stName, String address, String nic, String mobile, LocalDate date) {
+    public CustomDTO(String stId, String name, String address, String nic, String mobile, LocalDate date) {
         this.stId = stId;
-        this.stName = stName;
+        this.name = name;
         this.address = address;
         this.nic = nic;
         this.mobile = mobile;
         this.date = date;
     }
 
-    public StudentTM(String stId, String stName) {
+    public String getStId() {
+        return stId;
+    }
+
+    public void setStId(String stId) {
         this.stId = stId;
-        this.stName = stName;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getAddress() {
@@ -54,21 +65,5 @@ public class StudentTM {
 
     public void setDate(LocalDate date) {
         this.date = date;
-    }
-
-    public String getStId() {
-        return stId;
-    }
-
-    public void setStId(String stId) {
-        this.stId = stId;
-    }
-
-    public String getStName() {
-        return stName;
-    }
-
-    public void setStName(String stName) {
-        this.stName = stName;
     }
 }

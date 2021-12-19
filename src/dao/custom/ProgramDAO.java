@@ -11,6 +11,8 @@ public interface ProgramDAO extends CrudDAO<Program,String> {
 
     ArrayList<String> getProgramIds() throws SQLException, ClassNotFoundException;
 
-    ArrayList<Program> getAllProgramDetails() throws SQLException, ClassNotFoundException;
+    ArrayList<String> getAllProgramNames() throws SQLException, ClassNotFoundException;
+
+    String getProgram(String name);
 
 }

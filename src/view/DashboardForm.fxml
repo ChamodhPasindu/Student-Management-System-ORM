@@ -69,15 +69,20 @@
             </Text>
             <TableView fx:id="tblRegistered" layoutX="32.0" layoutY="118.0" prefHeight="392.0" prefWidth="919.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="St ID" />
-                <TableColumn prefWidth="163.0" text="Name" />
-                  <TableColumn prefWidth="170.0" text="Address" />
-                  <TableColumn prefWidth="155.0" text="NIC" />
-                  <TableColumn prefWidth="195.0" text="Mobile" />
-                  <TableColumn prefWidth="160.0" text="Date" />
+                <TableColumn fx:id="colStId" prefWidth="75.0" text="St ID" />
+                <TableColumn fx:id="colName" prefWidth="163.0" text="Name" />
+                  <TableColumn fx:id="colAddress" prefWidth="170.0" text="Address" />
+                  <TableColumn fx:id="colNic" prefWidth="155.0" text="NIC" />
+                  <TableColumn fx:id="colMobile" prefWidth="195.0" text="Mobile" />
+                  <TableColumn fx:id="colDate" prefWidth="160.0" text="Date" />
               </columns>
             </TableView>
             <ComboBox fx:id="cmbPrograms" layoutX="775.0" layoutY="50.0" prefHeight="26.0" prefWidth="176.0" promptText="Training program" />
+            <Text layoutX="33.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registerd Students">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </children>

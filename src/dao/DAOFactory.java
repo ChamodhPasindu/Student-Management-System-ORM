@@ -4,6 +4,7 @@ import bo.custom.impl.StudentBOImpl;
 import dao.custom.ProgramDetailDAO;
 import dao.custom.impl.ProgramDAOImpl;
 import dao.custom.impl.ProgramDetailDAOImpl;
+import dao.custom.impl.QueryDAOImpl;
 import dao.custom.impl.StudentDAOImpl;
 
 public class DAOFactory {
@@ -27,6 +28,8 @@ public class DAOFactory {
                 return new ProgramDAOImpl();
             case PROGRAMDETAIL:
                 return new ProgramDetailDAOImpl();
+            case QUERYDAO:
+                return new QueryDAOImpl();
             default:
                 return null;
         }
@@ -34,6 +37,6 @@ public class DAOFactory {
 
 
     public enum DAOTypes {
-        STUDENT, PROGRAM, PROGRAMDETAIL;
+        STUDENT, PROGRAM, PROGRAMDETAIL, QUERYDAO;
     }
 }

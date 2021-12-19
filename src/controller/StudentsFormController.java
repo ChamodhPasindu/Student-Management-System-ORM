@@ -50,7 +50,6 @@ public class StudentsFormController {
         ArrayList<StudentDTO> studentDTOS = studentBO.getAllStudentDetail();
         for (StudentDTO dto:studentDTOS) {
             studentTMS.add(new StudentTM(dto.getStId(),dto.getName()));
-            System.out.println(dto.getStId()+" "+dto.getName());
         }
         tblStudents.setItems(studentTMS);
     }

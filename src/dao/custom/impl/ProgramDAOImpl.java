@@ -121,7 +121,34 @@ public class ProgramDAOImpl implements ProgramDAO {
     }
 
     @Override
-    public ArrayList<Program> getAllProgramDetails() throws SQLException, ClassNotFoundException {
-        return null;
+    public ArrayList<String> getAllProgramNames() throws SQLException, ClassNotFoundException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        String hql = "SELECT DISTINCT name FROM program ";
+        Query query = session.createQuery(hql);
+        List<String> list = query.list();
+
+        transaction.commit();
+        session.close();
+
+        ArrayList<String> programName = new ArrayList<>();
+        programName.addAll(list);
+
+
+        return programName;
     }
+
+    @Override
+    public String getProgram(String name) {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        String hql="SELECT id FROM program WHERE name=:name";
+        Query query = session.createQuery(hql);
+        query.setParameter("name",name);
+        List list = query.list();
+        return list.get(0).toString();
+    }
+
 }

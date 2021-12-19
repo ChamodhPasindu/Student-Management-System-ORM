@@ -10,13 +10,13 @@ public class Student {
     @Column(name = "student_id")
     private String studentId;
 
-    @Column(name = "student_Name")
+    @Column(name = "student_name")
     private String studentName;
     private String nic;
     private String mobile;
     private String address;
 
-    @OneToMany(mappedBy = "student",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "student", fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private List<ProgramDetail>programDetails = new ArrayList<>();
 
     public Student(String studentId, String studentName, String nic, String mobile, String address) {

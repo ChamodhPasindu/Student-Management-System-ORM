@@ -17,7 +17,7 @@ public class Program {
     private String duration;
     private BigDecimal fee;
 
-    @OneToMany(mappedBy = "program", cascade = CascadeType.ALL , fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "program",  fetch = FetchType.EAGER,cascade = CascadeType.ALL )
     private List<ProgramDetail>programDetails  = new ArrayList<>();
 
 
