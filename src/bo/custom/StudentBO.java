@@ -1,7 +1,6 @@
 package bo.custom;
 
 import bo.SuperBO;
-import dto.ProgramDTO;
 import dto.StudentDTO;
 
 import java.sql.SQLException;

@@ -17,7 +17,7 @@ public class AddNewStudentFormController {
     public JFXTextField txtMobile;
     public JFXTextField txtNic;
 
-    public void initialize(){
+    public void initialize() {
         try {
             setStudentId();
         } catch (SQLException e) {
@@ -33,14 +33,14 @@ public class AddNewStudentFormController {
 
     public void confirmOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         StudentDTO studentDTO = new StudentDTO(
-                txtStudentId.getText(),txtStudentName.getText(),txtAddress.getText(),txtNic.getText(),
+                txtStudentId.getText(), txtStudentName.getText(), txtAddress.getText(), txtNic.getText(),
                 txtMobile.getText()
         );
-        if (studentBO.addStudent(studentDTO)){
-            new Alert(Alert.AlertType.INFORMATION,"Student Added Successfully").show();
+        if (studentBO.addStudent(studentDTO)) {
+            new Alert(Alert.AlertType.INFORMATION, "Student Added Successfully").show();
             clearAllOnAction();
-        }else{
-            new Alert(Alert.AlertType.WARNING,"Error,Try Again Latter").show();
+        } else {
+            new Alert(Alert.AlertType.WARNING, "Error,Try Again Latter").show();
         }
 
     }

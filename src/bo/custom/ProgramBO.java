@@ -2,7 +2,6 @@ package bo.custom;
 
 import bo.SuperBO;
 import dto.ProgramDTO;
-import entity.Program;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

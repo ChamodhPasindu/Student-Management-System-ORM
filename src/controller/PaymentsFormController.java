@@ -40,13 +40,13 @@ public class PaymentsFormController {
     public JFXTextField txtProgramName;
     public JFXTextField txtFee;
     public JFXTextField txtDuration;
-   public TableView tblPrograms;
+    public TableView tblPrograms;
     public TableColumn colProgramId;
     public TableColumn colProgram;
     public TableColumn colDuration;
     public TableColumn colFee;
 
-    public void initialize(){
+    public void initialize() {
         colProgramId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colProgram.setCellValueFactory(new PropertyValueFactory<>("name"));
         colDuration.setCellValueFactory(new PropertyValueFactory<>("duration"));
@@ -61,9 +61,9 @@ public class PaymentsFormController {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        
+
         cmbProgramId.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue==null){
+            if (newValue == null) {
                 return;
             }
             try {
@@ -75,7 +75,6 @@ public class PaymentsFormController {
             }
         });
     }
-
 
 
     private void loadProgramId() throws SQLException, ClassNotFoundException {
@@ -97,13 +96,14 @@ public class PaymentsFormController {
         lblDate.setText(f.format(date));
     }
 
-    ObservableList<ProgramTM>programTMS = FXCollections.observableArrayList();
+    ObservableList<ProgramTM> programTMS = FXCollections.observableArrayList();
+
     private void loadProgramTable() throws SQLException, ClassNotFoundException {
         programTMS.clear();
 
         ArrayList<ProgramDTO> allProgramDetail = programBO.getAllProgramDetail();
-        for (ProgramDTO dto:allProgramDetail) {
-            programTMS.add(new ProgramTM(dto.getId(),dto.getName(),dto.getDuration(),dto.getFee()));
+        for (ProgramDTO dto : allProgramDetail) {
+            programTMS.add(new ProgramTM(dto.getId(), dto.getName(), dto.getDuration(), dto.getFee()));
         }
         tblPrograms.setItems(programTMS);
     }
@@ -119,13 +119,17 @@ public class PaymentsFormController {
     }
 
     public void addOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        if (registerProgramBO.isExistStudent(txtStId.getText(), cmbProgramId.getValue())) {
+            new Alert(Alert.AlertType.INFORMATION, "Student Already register with this program").show();
+            return;
+        }
         ProgramDetailDTO dto = new ProgramDetailDTO(
-                txtStId.getText(),cmbProgramId.getValue(), LocalDate.parse(lblDate.getText())
+                txtStId.getText(), cmbProgramId.getValue(), LocalDate.parse(lblDate.getText())
         );
         if (registerProgramBO.registerProgram(dto)) {
-            new Alert(Alert.AlertType.INFORMATION,"Successful").show();
-        }else{
-            new Alert(Alert.AlertType.INFORMATION,"Try Again").show();
+            new Alert(Alert.AlertType.INFORMATION, "Successful").show();
+        } else {
+            new Alert(Alert.AlertType.INFORMATION, "Try Again").show();
         }
     }
 
@@ -134,9 +138,9 @@ public class PaymentsFormController {
 
     public void searchOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         StudentDTO studentDTO = studentBO.searchStudent(txtStId.getText());
-        if (studentDTO==null){
+        if (studentDTO == null) {
             new Alert(Alert.AlertType.WARNING, "Empty Result set").show();
-        }else{
+        } else {
             txtStudentName.setText(studentDTO.getName());
             txtMobile.setText(studentDTO.getMobile());
             txtAddress.setText(studentDTO.getAddress());

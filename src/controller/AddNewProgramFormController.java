@@ -19,7 +19,7 @@ public class AddNewProgramFormController {
     public JFXTextField txtDuration;
     public JFXButton confirmOnAction;
 
-    public void initialize(){
+    public void initialize() {
         try {
             createProgramId();
         } catch (SQLException e) {
@@ -35,13 +35,13 @@ public class AddNewProgramFormController {
 
     public void confirmOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         ProgramDTO programDTO = new ProgramDTO(
-                txtProgramId.getText(),txtProgramName.getText(),txtDuration.getText(), new BigDecimal(txtFee.getText())
+                txtProgramId.getText(), txtProgramName.getText(), txtDuration.getText(), new BigDecimal(txtFee.getText())
         );
-        if (programBO.addProgram(programDTO)){
-            new Alert(Alert.AlertType.INFORMATION,"Student Added Successfully").show();
+        if (programBO.addProgram(programDTO)) {
+            new Alert(Alert.AlertType.INFORMATION, "Student Added Successfully").show();
             clearAllOnAction();
-        }else{
-            new Alert(Alert.AlertType.WARNING,"Error,Try Again Latter").show();
+        } else {
+            new Alert(Alert.AlertType.WARNING, "Error,Try Again Latter").show();
         }
 
     }

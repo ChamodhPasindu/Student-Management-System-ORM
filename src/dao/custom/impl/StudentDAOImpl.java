@@ -1,14 +1,12 @@
 package dao.custom.impl;
 
 import dao.custom.StudentDAO;
-import entity.Program;
 import entity.Student;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import util.FactoryConfiguration;
 
-import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -114,7 +112,7 @@ public class StudentDAOImpl implements StudentDAO {
         session.close();
 
         ArrayList<String> studentId = new ArrayList<>();
-        for (Student s: list) {
+        for (Student s : list) {
             studentId.add(s.getStudentId());
         }
 

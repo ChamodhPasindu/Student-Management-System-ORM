@@ -4,7 +4,6 @@ import bo.BOFactory;
 import bo.custom.ProgramBO;
 import bo.custom.RegisterProgramBO;
 import bo.custom.StudentBO;
-import dto.CustomDTO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -41,7 +40,7 @@ public class DashboardFormController {
     public ComboBox<String> cmbPrograms;
     public AnchorPane dashboardContext;
 
-    public void initialize(){
+    public void initialize() {
         colStId.setCellValueFactory(new PropertyValueFactory<>("stId"));
         colName.setCellValueFactory(new PropertyValueFactory<>("stName"));
         colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
@@ -61,17 +60,18 @@ public class DashboardFormController {
         });
     }
 
-    ObservableList<StudentTM>studentTMS = FXCollections.observableArrayList();
+    ObservableList<StudentTM> studentTMS = FXCollections.observableArrayList();
+
     private void loadRegisterTable(String name) {
         studentTMS.clear();
 
         String id = programBO.getProgram(name);
         List<Object[]> students = registerProgramBO.getAllRegisteredStudents(id);
 
-        int i=0;
-        for (Object[] dto:students) {
-            studentTMS.add(new StudentTM(dto[i].toString(), dto[i+1].toString(), dto[i+2].toString(), dto[i+3].toString(),
-                    dto[i+4].toString(), LocalDate.parse(dto[i+5].toString())));
+        int i = 0;
+        for (Object[] dto : students) {
+            studentTMS.add(new StudentTM(dto[i].toString(), dto[i + 1].toString(), dto[i + 2].toString(), dto[i + 3].toString(),
+                    dto[i + 4].toString(), LocalDate.parse(dto[i + 5].toString())));
         }
         tblRegistered.setItems(studentTMS);
     }
@@ -84,7 +84,8 @@ public class DashboardFormController {
 
     public void studentsOnAction(ActionEvent actionEvent) throws IOException {
         Parent load = FXMLLoader.load(getClass().getResource("../view/StudentsForm.fxml"));
-        subContext.getChildren().clear();;
+        subContext.getChildren().clear();
+        ;
         subContext.getChildren().add(load);
     }
 
@@ -97,13 +98,15 @@ public class DashboardFormController {
 
     public void paymentsOnAction(ActionEvent actionEvent) throws IOException {
         Parent load = FXMLLoader.load(getClass().getResource("../view/paymentsForm.fxml"));
-        subContext.getChildren().clear();;
+        subContext.getChildren().clear();
+        ;
         subContext.getChildren().add(load);
     }
 
     public void programsOnAction(ActionEvent actionEvent) throws IOException {
         Parent load = FXMLLoader.load(getClass().getResource("../view/ProgramsForm.fxml"));
-        subContext.getChildren().clear();;
+        subContext.getChildren().clear();
+        ;
         subContext.getChildren().add(load);
     }
 

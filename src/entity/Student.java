@@ -16,8 +16,8 @@ public class Student {
     private String mobile;
     private String address;
 
-    @OneToMany(mappedBy = "student", fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-    private List<ProgramDetail>programDetails = new ArrayList<>();
+    @OneToMany(mappedBy = "student", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<ProgramDetail> programDetails = new ArrayList<>();
 
     public Student(String studentId, String studentName, String nic, String mobile, String address) {
         this.studentId = studentId;

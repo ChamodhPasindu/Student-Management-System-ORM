@@ -1,6 +1,5 @@
 package bo;
 
-import bo.custom.RegisterProgramBO;
 import bo.custom.impl.ProgramBOImpl;
 import bo.custom.impl.RegisterProgramBOIpl;
 import bo.custom.impl.StudentBOImpl;

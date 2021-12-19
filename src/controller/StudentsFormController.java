@@ -3,10 +3,7 @@ package controller;
 import bo.BOFactory;
 import bo.custom.StudentBO;
 import com.jfoenix.controls.JFXTextField;
-import dao.custom.StudentDAO;
-import dto.ProgramDTO;
 import dto.StudentDTO;
-import entity.Student;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,7 +11,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import view.tm.ProgramTM;
 import view.tm.StudentTM;
 
 import java.sql.SQLException;
@@ -31,7 +27,7 @@ public class StudentsFormController {
     public TableColumn colStId;
     public TableColumn colStName;
 
-    public void initialize(){
+    public void initialize() {
         colStId.setCellValueFactory(new PropertyValueFactory<>("stId"));
         colStName.setCellValueFactory(new PropertyValueFactory<>("stName"));
 
@@ -43,13 +39,15 @@ public class StudentsFormController {
             e.printStackTrace();
         }
     }
-    ObservableList<StudentTM>studentTMS = FXCollections.observableArrayList();
+
+    ObservableList<StudentTM> studentTMS = FXCollections.observableArrayList();
+
     private void loadStudentTable() throws SQLException, ClassNotFoundException {
         studentTMS.clear();
 
         ArrayList<StudentDTO> studentDTOS = studentBO.getAllStudentDetail();
-        for (StudentDTO dto:studentDTOS) {
-            studentTMS.add(new StudentTM(dto.getStId(),dto.getName()));
+        for (StudentDTO dto : studentDTOS) {
+            studentTMS.add(new StudentTM(dto.getStId(), dto.getName()));
         }
         tblStudents.setItems(studentTMS);
     }

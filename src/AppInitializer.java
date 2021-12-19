@@ -20,15 +20,6 @@ public class AppInitializer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-
-
-        Session session = FactoryConfiguration.getInstance().getSession();
-        Transaction transaction = session.beginTransaction();
-
-
-        transaction.commit();
-        session.close();
-
         Parent load = FXMLLoader.load(getClass().getResource("view/LoginForm.fxml"));
         Scene scene = new Scene(load);
         primaryStage.setScene(scene);

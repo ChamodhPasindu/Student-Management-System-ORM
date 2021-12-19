@@ -32,7 +32,7 @@ public class ProgramsFormController {
     public TableColumn colProgramId;
     public TableColumn colProgramName;
 
-    public void initialize(){
+    public void initialize() {
 
         colProgramId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colProgramName.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -46,13 +46,14 @@ public class ProgramsFormController {
         }
     }
 
-    ObservableList<ProgramTM>programTMS = FXCollections.observableArrayList();
+    ObservableList<ProgramTM> programTMS = FXCollections.observableArrayList();
+
     private void loadProgramTable() throws SQLException, ClassNotFoundException {
         programTMS.clear();
 
         ArrayList<ProgramDTO> allProgramDetail = programBO.getAllProgramDetail();
-        for (ProgramDTO dto:allProgramDetail) {
-            programTMS.add(new ProgramTM(dto.getId(),dto.getName()));
+        for (ProgramDTO dto : allProgramDetail) {
+            programTMS.add(new ProgramTM(dto.getId(), dto.getName()));
         }
         tblPrograms.setItems(programTMS);
     }

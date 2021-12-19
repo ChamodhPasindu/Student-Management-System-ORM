@@ -10,7 +10,7 @@ public class ProgramDetail {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name="student_id")
+    @JoinColumn(name = "student_id")
     private Student student;
 
     @ManyToOne

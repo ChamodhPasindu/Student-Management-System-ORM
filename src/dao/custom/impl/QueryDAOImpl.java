@@ -23,7 +23,7 @@ public class QueryDAOImpl implements QueryDAO {
         String hql = "SELECT s.studentId,s.studentName, s.address,s.nic,s.mobile,p.date FROM student s JOIN program_detail p" +
                 " ON s.studentId=p.student WHERE p.program=:program_id";
         Query query = session.createQuery(hql);
-        query.setParameter("program_id",program);
+        query.setParameter("program_id", program);
         List<Object[]> list = query.list();
         return list;
     }

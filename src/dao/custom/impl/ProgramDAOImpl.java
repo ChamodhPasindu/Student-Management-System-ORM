@@ -69,7 +69,7 @@ public class ProgramDAOImpl implements ProgramDAO {
         session.close();
 
         ArrayList<Program> programs = new ArrayList<>();
-         programs.addAll(list);
+        programs.addAll(list);
         return programs;
     }
 
@@ -144,9 +144,9 @@ public class ProgramDAOImpl implements ProgramDAO {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
-        String hql="SELECT id FROM program WHERE name=:name";
+        String hql = "SELECT id FROM program WHERE name=:name";
         Query query = session.createQuery(hql);
-        query.setParameter("name",name);
+        query.setParameter("name", name);
         List list = query.list();
         return list.get(0).toString();
     }
