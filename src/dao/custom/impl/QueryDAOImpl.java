@@ -25,6 +25,8 @@ public class QueryDAOImpl implements QueryDAO {
         Query query = session.createQuery(hql);
         query.setParameter("program_id", program);
         List<Object[]> list = query.list();
+        transaction.commit();
+        session.close();
         return list;
     }
 }

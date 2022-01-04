@@ -1,5 +1,7 @@
 package entity;
 
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -17,8 +19,8 @@ public class Program {
     private String duration;
     private BigDecimal fee;
 
-    @OneToMany(mappedBy = "program", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<ProgramDetail> programDetails = new ArrayList<>();
+    @OneToMany(mappedBy = "program",  fetch = FetchType.LAZY,cascade = CascadeType.ALL )
+    private List<ProgramDetail>programDetails  = new ArrayList<>();
 
 
     public Program() {

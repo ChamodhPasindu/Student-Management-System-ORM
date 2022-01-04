@@ -60,9 +60,6 @@ public class ProgramDetailDAOImpl implements ProgramDetailDAO {
         List list = query.list();
         transaction.commit();
         session.close();
-        for (Object l : list) {
-            System.out.println(list);
-        }
         if (!list.isEmpty()) {
             return true;
         } else {

@@ -1,5 +1,7 @@
 package entity;
 
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +18,7 @@ public class Student {
     private String mobile;
     private String address;
 
-    @OneToMany(mappedBy = "student", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "student", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<ProgramDetail> programDetails = new ArrayList<>();
 
     public Student(String studentId, String studentName, String nic, String mobile, String address) {
@@ -86,7 +88,6 @@ public class Student {
                 ", nic='" + nic + '\'' +
                 ", mobile='" + mobile + '\'' +
                 ", address='" + address + '\'' +
-                ", programDetails=" + programDetails +
                 '}';
     }
 }

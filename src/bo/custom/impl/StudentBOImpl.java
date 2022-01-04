@@ -53,9 +53,4 @@ public class StudentBOImpl implements StudentBO {
         }
         return dtos;
     }
-
-    @Override
-    public ArrayList<String> getStudentId() throws SQLException, ClassNotFoundException {
-        return studentDAO.getStudentIds();
-    }
 }

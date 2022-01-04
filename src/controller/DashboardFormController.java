@@ -68,10 +68,9 @@ public class DashboardFormController {
         String id = programBO.getProgram(name);
         List<Object[]> students = registerProgramBO.getAllRegisteredStudents(id);
 
-        int i = 0;
         for (Object[] dto : students) {
-            studentTMS.add(new StudentTM(dto[i].toString(), dto[i + 1].toString(), dto[i + 2].toString(), dto[i + 3].toString(),
-                    dto[i + 4].toString(), LocalDate.parse(dto[i + 5].toString())));
+            studentTMS.add(new StudentTM(dto[0].toString(), dto[1].toString(), dto[2].toString(), dto[3].toString(),
+                    dto[4].toString(), LocalDate.parse(dto[5].toString())));
         }
         tblRegistered.setItems(studentTMS);
     }
@@ -85,7 +84,6 @@ public class DashboardFormController {
     public void studentsOnAction(ActionEvent actionEvent) throws IOException {
         Parent load = FXMLLoader.load(getClass().getResource("../view/StudentsForm.fxml"));
         subContext.getChildren().clear();
-        ;
         subContext.getChildren().add(load);
     }
 
@@ -99,14 +97,12 @@ public class DashboardFormController {
     public void paymentsOnAction(ActionEvent actionEvent) throws IOException {
         Parent load = FXMLLoader.load(getClass().getResource("../view/paymentsForm.fxml"));
         subContext.getChildren().clear();
-        ;
         subContext.getChildren().add(load);
     }
 
     public void programsOnAction(ActionEvent actionEvent) throws IOException {
         Parent load = FXMLLoader.load(getClass().getResource("../view/ProgramsForm.fxml"));
         subContext.getChildren().clear();
-        ;
         subContext.getChildren().add(load);
     }
 

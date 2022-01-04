@@ -26,12 +26,12 @@
                </font>
             </JFXButton>
             <ComboBox fx:id="cmbProgramId" layoutX="28.0" layoutY="147.0" prefHeight="26.0" prefWidth="160.0" promptText="Program ID" />
-            <JFXTextField fx:id="txtStudentName" labelFloat="true" layoutX="294.0" layoutY="92.0" prefHeight="26.0" prefWidth="154.0" promptText="Student Name" />
-            <JFXTextField fx:id="txtMobile" labelFloat="true" layoutX="462.0" layoutY="92.0" prefHeight="26.0" prefWidth="111.0" promptText="Mobile" />
-            <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="584.0" layoutY="92.0" prefHeight="26.0" prefWidth="241.0" promptText="Address" />
-            <JFXTextField fx:id="txtProgramName" labelFloat="true" layoutX="294.0" layoutY="147.0" promptText="Program Name" />
-            <JFXTextField fx:id="txtFee" labelFloat="true" layoutX="670.0" layoutY="147.0" promptText="Fee" />
-            <JFXTextField fx:id="txtDuration" labelFloat="true" layoutX="482.0" layoutY="147.0" promptText="Duration" />
+            <JFXTextField fx:id="txtStudentName" editable="false" labelFloat="true" layoutX="294.0" layoutY="92.0" prefHeight="26.0" prefWidth="154.0" promptText="Student Name" />
+            <JFXTextField fx:id="txtMobile" editable="false" labelFloat="true" layoutX="462.0" layoutY="92.0" prefHeight="26.0" prefWidth="111.0" promptText="Mobile" />
+            <JFXTextField fx:id="txtAddress" editable="false" labelFloat="true" layoutX="584.0" layoutY="92.0" prefHeight="26.0" prefWidth="241.0" promptText="Address" />
+            <JFXTextField fx:id="txtProgramName" editable="false" labelFloat="true" layoutX="294.0" layoutY="147.0" promptText="Program Name" />
+            <JFXTextField fx:id="txtFee" editable="false" labelFloat="true" layoutX="670.0" layoutY="147.0" promptText="Fee" />
+            <JFXTextField fx:id="txtDuration" editable="false" labelFloat="true" layoutX="482.0" layoutY="147.0" promptText="Duration" />
             <Text layoutX="688.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" wrappingWidth="56.9169921875">
                <font>
                   <Font name="System Bold Italic" size="15.0" />

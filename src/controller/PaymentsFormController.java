@@ -119,6 +119,11 @@ public class PaymentsFormController {
     }
 
     public void addOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        if (cmbProgramId.getValue()==null || txtStId.getText()==null){
+            new Alert(Alert.AlertType.INFORMATION, "Select student and program").show();
+            return;
+        }
+
         if (registerProgramBO.isExistStudent(txtStId.getText(), cmbProgramId.getValue())) {
             new Alert(Alert.AlertType.INFORMATION, "Student Already register with this program").show();
             return;
@@ -134,6 +139,14 @@ public class PaymentsFormController {
     }
 
     public void clearOnAction(ActionEvent actionEvent) {
+        cmbProgramId.setValue(null);
+        txtStId.clear();
+        txtStudentName.clear();
+        txtMobile.clear();
+        txtAddress.clear();
+        txtProgramName.clear();
+        txtDuration.clear();
+        txtFee.clear();
     }
 
     public void searchOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {

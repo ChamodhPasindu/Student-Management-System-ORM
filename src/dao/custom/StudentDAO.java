@@ -10,6 +10,5 @@ public interface StudentDAO extends CrudDAO<Student, String> {
 
     String createStudentId() throws SQLException, ClassNotFoundException;
 
-    ArrayList<String> getStudentIds() throws SQLException, ClassNotFoundException;
 
 }

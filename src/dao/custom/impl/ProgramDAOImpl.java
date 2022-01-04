@@ -148,6 +148,8 @@ public class ProgramDAOImpl implements ProgramDAO {
         Query query = session.createQuery(hql);
         query.setParameter("name", name);
         List list = query.list();
+        transaction.commit();
+        session.close();
         return list.get(0).toString();
     }
 

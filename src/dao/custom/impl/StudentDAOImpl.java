@@ -16,11 +16,9 @@ public class StudentDAOImpl implements StudentDAO {
     public boolean add(Student student) throws SQLException, ClassNotFoundException {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-
         session.save(student);
-
         transaction.commit();
-        session.close();
+
         return true;
     }
 
@@ -31,7 +29,6 @@ public class StudentDAOImpl implements StudentDAO {
         Student student = session.load(Student.class, s);
         session.delete(student);
         transaction.commit();
-        session.close();
         return true;
     }
 
@@ -41,7 +38,6 @@ public class StudentDAOImpl implements StudentDAO {
         Transaction transaction = session.beginTransaction();
         session.update(student);
         transaction.commit();
-        session.close();
         return true;
     }
 
@@ -51,7 +47,6 @@ public class StudentDAOImpl implements StudentDAO {
         Transaction transaction = session.beginTransaction();
         Student student = session.get(Student.class, s);
         transaction.commit();
-        session.close();
         return student;
     }
 
@@ -64,7 +59,6 @@ public class StudentDAOImpl implements StudentDAO {
         List<Student> list = query.list();
 
         transaction.commit();
-        session.close();
 
         ArrayList<Student> students = new ArrayList<>();
         students.addAll(list);
@@ -82,7 +76,6 @@ public class StudentDAOImpl implements StudentDAO {
         List<String> list = query.list();
 
         transaction.commit();
-        session.close();
 
         if (!list.isEmpty()) {
             int tempId = Integer.parseInt(list.get(0).split("-")[1]);
@@ -99,23 +92,4 @@ public class StudentDAOImpl implements StudentDAO {
         }
     }
 
-    @Override
-    public ArrayList<String> getStudentIds() throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
-        Transaction transaction = session.beginTransaction();
-
-        String hql = "SELECT DISTINCT studentId FROM student ";
-        Query query = session.createQuery(hql);
-        List<Student> list = query.list();
-
-        transaction.commit();
-        session.close();
-
-        ArrayList<String> studentId = new ArrayList<>();
-        for (Student s : list) {
-            studentId.add(s.getStudentId());
-        }
-
-        return studentId;
-    }
 }

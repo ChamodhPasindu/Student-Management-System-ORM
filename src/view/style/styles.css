@@ -10,3 +10,7 @@
     -fx-border-width: 2px;
     -fx-border-color: #c94141;
 }
+.btn-one:hover{
+    -fx-font-size: 23px;
+    -fx-font-weight: bold;
+}

@@ -1,5 +1,7 @@
 package entity;
 
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -10,11 +12,11 @@ public class ProgramDetail {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "student_id")
+    @JoinColumn(name="student_id")
     private Student student;
 
     @ManyToOne
-    @JoinColumn(name = "programe_id")
+    @JoinColumn(name = "program_id")
     private Program program;
     private LocalDate date;
 

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -23,12 +25,19 @@
       </Pane>
       <Pane layoutY="60.0" prefHeight="540.0" prefWidth="215.0" style="-fx-background-color: #2C3539;">
          <children>
-            <JFXButton alignment="TOP_LEFT" layoutX="14.0" layoutY="240.0" onAction="#studentsOnAction" prefHeight="42.0" prefWidth="170.0" styleClass="btn" stylesheets="@style/styles.css" text="Students" textFill="WHITE">
+            <JFXButton alignment="TOP_LEFT" layoutX="23.0" layoutY="237.0" onAction="#studentsOnAction" prefHeight="42.0" prefWidth="170.0" stylesheets="@style/styles.css" text="Students" textFill="WHITE">
                <font>
                   <Font size="22.0" />
                </font>
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </padding>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-one" />
+               </styleClass>
             </JFXButton>
-            <JFXButton layoutX="35.0" layoutY="494.0" onAction="#logOutBtnOnAction" prefHeight="26.0" prefWidth="145.0" style="-fx-background-color: red;" text="LOGOUT" textFill="WHITE">
+            <JFXButton layoutX="36.0" layoutY="494.0" onAction="#logOutBtnOnAction" prefHeight="26.0" prefWidth="145.0" style="-fx-background-color: red; -fx-font-weight: bold;" text="LOGOUT" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="16.0" />
                </font>
@@ -43,20 +52,41 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <JFXButton alignment="TOP_LEFT" layoutX="14.0" layoutY="184.0" onAction="#paymentsOnAction" prefHeight="42.0" prefWidth="170.0" styleClass="btn" stylesheets="@style/styles.css" text="Payments" textFill="WHITE">
+            <JFXButton alignment="TOP_LEFT" layoutX="23.0" layoutY="181.0" onAction="#paymentsOnAction" prefHeight="42.0" prefWidth="170.0" stylesheets="@style/styles.css" text="Payments" textFill="WHITE">
                <font>
                   <Font size="22.0" />
                </font>
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </padding>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-one" />
+               </styleClass>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutX="14.0" layoutY="295.0" onAction="#programsOnAction" prefHeight="42.0" prefWidth="170.0" styleClass="btn" stylesheets="@style/styles.css" text="Programs" textFill="WHITE">
+            <JFXButton alignment="TOP_LEFT" layoutX="23.0" layoutY="292.0" onAction="#programsOnAction" prefHeight="42.0" prefWidth="170.0" stylesheets="@style/styles.css" text="Programs" textFill="WHITE">
                <font>
                   <Font size="22.0" />
                </font>
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </padding>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-one" />
+               </styleClass>
             </JFXButton>
-            <JFXButton alignment="TOP_LEFT" layoutX="14.0" layoutY="127.0" onAction="#dashboardOnAction" prefHeight="42.0" prefWidth="170.0" styleClass="btn" stylesheets="@style/styles.css" text="Dashboard" textFill="WHITE">
+            <JFXButton alignment="TOP_LEFT" layoutX="23.0" layoutY="124.0" onAction="#dashboardOnAction" prefHeight="42.0" prefWidth="170.0" stylesheets="@style/styles.css" text="Dashboard" textFill="WHITE">
                <font>
                   <Font size="22.0" />
                </font>
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </padding>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-one" />
+               </styleClass>
             </JFXButton>
          </children>
       </Pane>
@@ -67,18 +97,22 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Text>
-            <TableView fx:id="tblRegistered" layoutX="32.0" layoutY="118.0" prefHeight="392.0" prefWidth="919.0">
-              <columns>
-                <TableColumn fx:id="colStId" prefWidth="75.0" text="St ID" />
-                <TableColumn fx:id="colName" prefWidth="163.0" text="Name" />
+            <Pane layoutX="23.0" layoutY="60.0" prefHeight="450.0" prefWidth="938.0" style="-fx-background-color: white;" styleClass="pane-sub" stylesheets="@style/styles.css">
+               <children>
+                  <ComboBox fx:id="cmbPrograms" layoutX="738.0" layoutY="23.0" prefHeight="26.0" prefWidth="176.0" promptText="Training program" />
+               </children>
+            </Pane>
+            <TableView fx:id="tblRegistered" layoutX="42.0" layoutY="128.0" prefHeight="364.0" prefWidth="895.0">
+               <columns>
+                  <TableColumn fx:id="colStId" prefWidth="75.0" text="St ID" />
+                  <TableColumn fx:id="colName" prefWidth="163.0" text="Name" />
                   <TableColumn fx:id="colAddress" prefWidth="170.0" text="Address" />
                   <TableColumn fx:id="colNic" prefWidth="155.0" text="NIC" />
                   <TableColumn fx:id="colMobile" prefWidth="195.0" text="Mobile" />
                   <TableColumn fx:id="colDate" prefWidth="160.0" text="Date" />
-              </columns>
+               </columns>
             </TableView>
-            <ComboBox fx:id="cmbPrograms" layoutX="775.0" layoutY="50.0" prefHeight="26.0" prefWidth="176.0" promptText="Training program" />
-            <Text layoutX="33.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registerd Students">
+            <Text layoutX="42.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registerd Students">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
